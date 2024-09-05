@@ -22,12 +22,14 @@ def GetData():
 def EncryptButtonAction():
     GetData()
     resultMessage = encrypt(message, key)
-    print("encrypt test " + resultMessage)
+    result_textBox.insert("end", resultMessage)
+    print("encrypt result: " + resultMessage)
 
 def DecryptButtonAction():
     GetData()
-    resultMessage = encrypt(message, key)
-    print("decrypt test " + resultMessage)
+    resultMessage = decrypt(message, key)
+    result_textBox.insert("end", resultMessage)
+    print("decrypt result: " + resultMessage)
 
 # ----------------- Front-End -----------------
 frame = ctk.CTkFrame(master=root)
