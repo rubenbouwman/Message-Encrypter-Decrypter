@@ -13,12 +13,18 @@ key = ""
 resultmessage = ""
 
 # ----------------- Controller Functions -----------------
-def EncryptButtonAction():
+def GetData():
+    global message
+    global key
     message = message_textBox.get(0.0, "end")
+    key = Key_entry.get()
+
+def EncryptButtonAction():
+    GetData()
     print("encrypt test " + message)
 
 def DecryptButtonAction():
-    message = message_textBox.get(0.0, "end")
+    GetData()
     print("decrypt test " + message)
 
 # ----------------- Front-End -----------------
@@ -28,8 +34,8 @@ frame.pack(pady=20, padx=60, fill="both", expand=True)
 message_textBox = ctk.CTkTextbox(master=frame, width=400)
 message_textBox.pack(pady=20, padx=10)
 
-entry2 = ctk.CTkEntry(master=frame, placeholder_text="Key", show="*")
-entry2.pack(pady=12, padx=10)
+Key_entry = ctk.CTkEntry(master=frame, placeholder_text="Key", show="*")
+Key_entry.pack(pady=12, padx=10)
 
 encryptButton = ctk.CTkButton(master=frame, text="Encrypt message", command=EncryptButtonAction)
 encryptButton.pack(pady=12, padx=10)
