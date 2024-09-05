@@ -42,7 +42,7 @@ label1.pack(pady=(10))
 label1 = ctk.CTkLabel(master=frame, text="Your message")
 label1.pack(pady=(20, 5))
 
-message_textBox = ctk.CTkTextbox(master=frame, width=400, wrap="word")
+message_textBox = ctk.CTkTextbox(master=frame, width=400, height=125, wrap="word")
 message_textBox.pack(pady=(5, 20), padx=10)
 
 Key_entry = ctk.CTkEntry(master=frame, placeholder_text="Key")
@@ -58,7 +58,7 @@ decryptButton.grid(row=0, column=1, pady=10, padx=10)
 
 label1 = ctk.CTkLabel(master=frame, text="Results")
 label1.pack(pady=5)
-result_textBox = ctk.CTkTextbox(master=frame, width=400, wrap="word")
+result_textBox = ctk.CTkTextbox(master=frame, width=400, height=125, wrap="word")
 result_textBox.pack(pady=(5, 20), padx=10)
 
 # ----------------- Run -----------------
