@@ -23,12 +23,14 @@ def GetData():
 def EncryptButtonAction():
     GetData()
     resultMessage = encrypt(message, key)
+    result_textBox.delete(0.0, "end")
     result_textBox.insert("end", resultMessage)
     print("encrypt result: " + resultMessage)
 
 def DecryptButtonAction():
     GetData()
     resultMessage = decrypt(message, key)
+    result_textBox.delete(0.0, "end")
     result_textBox.insert("end", resultMessage)
     print("decrypt result: " + resultMessage)
 
