@@ -1,12 +1,12 @@
 # ----------------- Variable field -----------------
 text = ''
 custom_key = ''
+alphabet = 'abcdefghijklmnopqrstuvwxyz1234567890'
 
 # ----------------- Functions -----------------
 # Method for encrypting and decrypting a message based on the vigenere cipher
 def vigenere(message, key, direction=1):
     key_index = 0
-    alphabet = 'abcdefghijklmnopqrstuvwxyz1234567890'
     final_message = ''
 
     for char in message.lower():
