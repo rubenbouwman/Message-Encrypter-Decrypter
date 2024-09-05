@@ -34,7 +34,7 @@ def decrypt(message, key):
     return vigenere(message, key, -1)
 
 # ----------------- Interactable Functions -----------------
-def Question():
+""" def Question():
     answer = input("Do you want to encrypt (E) or decrypt (D) a message?\n")
     if(answer.casefold() == "e"):
         message = input ("\nWhat message do you want to encrypt?\n")
@@ -47,7 +47,7 @@ def Question():
         print("\nDecrypted message: " + decrypt(message, key) + "\n")
     
     # Run the question again after encrypting or decrypting
-    Question()
+    Question() """
 
 # ----------------- Run Program -----------------
-Question()
+#Question()
