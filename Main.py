@@ -1,4 +1,5 @@
 import customtkinter as ctk
+from VigenereCipher import encrypt, decrypt
 
 # ----------------- Setup -----------------
 ctk.set_appearance_mode("dark")
@@ -10,7 +11,6 @@ root.geometry("500x650")
 # ----------------- Variable Field -----------------
 message = ""
 key = ""
-resultmessage = ""
 
 # ----------------- Controller Functions -----------------
 def GetData():
@@ -21,11 +21,13 @@ def GetData():
 
 def EncryptButtonAction():
     GetData()
-    print("encrypt test " + message)
+    resultMessage = encrypt(message, key)
+    print("encrypt test " + resultMessage)
 
 def DecryptButtonAction():
     GetData()
-    print("decrypt test " + message)
+    resultMessage = encrypt(message, key)
+    print("decrypt test " + resultMessage)
 
 # ----------------- Front-End -----------------
 frame = ctk.CTkFrame(master=root)
