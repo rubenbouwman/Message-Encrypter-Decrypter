@@ -1,5 +1,6 @@
 import customtkinter as ctk
 from VigenereCipher import encrypt, decrypt
+from PIL import Image
 
 # ----------------- Setup -----------------
 ctk.set_appearance_mode("dark")
@@ -11,7 +12,7 @@ root.geometry("550x700")
 # ----------------- Variable Field -----------------
 message = ""
 key = ""
-
+logo = ctk.CTkImage(dark_image=Image.open('Images/FalloutHackingIcon.png'), size=(120, 120))
 # ----------------- Controller Functions -----------------
 def GetData():
     global message
@@ -34,6 +35,9 @@ def DecryptButtonAction():
 # ----------------- Front-End -----------------
 frame = ctk.CTkFrame(master=root)
 frame.pack(pady=20, padx=60, fill="both", expand=True)
+
+label1 = ctk.CTkLabel(master=frame, text="", image=logo)
+label1.pack(pady=(10))
 
 label1 = ctk.CTkLabel(master=frame, text="Your message")
 label1.pack(pady=(20, 5))
