@@ -6,13 +6,13 @@ custom_key = ''
 # Method for encrypting and decrypting a message based on the vigenere cipher
 def vigenere(message, key, direction=1):
     key_index = 0
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    alphabet = 'abcdefghijklmnopqrstuvwxyz1234567890'
     final_message = ''
 
     for char in message.lower():
 
         # Append any non-letter character to the message
-        if not char.isalpha():
+        if not (char.isalpha() or char.isdigit()):
             final_message += char
         else:        
             # Find the right key character to encode/decode
