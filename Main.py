@@ -6,7 +6,7 @@ ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
 root = ctk.CTk()
 root.title("Message encrypter & decrypter")
-root.geometry("500x650")
+root.geometry("550x700")
 
 # ----------------- Variable Field -----------------
 message = ""
@@ -35,20 +35,27 @@ def DecryptButtonAction():
 frame = ctk.CTkFrame(master=root)
 frame.pack(pady=20, padx=60, fill="both", expand=True)
 
-message_textBox = ctk.CTkTextbox(master=frame, width=400)
-message_textBox.pack(pady=20, padx=10)
+label1 = ctk.CTkLabel(master=frame, text="Your message")
+label1.pack(pady=(20, 5))
 
-Key_entry = ctk.CTkEntry(master=frame, placeholder_text="Key", show="*")
+message_textBox = ctk.CTkTextbox(master=frame, width=400, wrap="word")
+message_textBox.pack(pady=(5, 20), padx=10)
+
+Key_entry = ctk.CTkEntry(master=frame, placeholder_text="Key")
 Key_entry.pack(pady=12, padx=10)
 
-encryptButton = ctk.CTkButton(master=frame, text="Encrypt message", command=EncryptButtonAction)
-encryptButton.pack(pady=12, padx=10)
+buttonFrame1 = ctk.CTkFrame(master=frame)
+buttonFrame1.pack(pady=10)
 
-decryptButton = ctk.CTkButton(master=frame, text="Decrypt message", command=DecryptButtonAction)
-decryptButton.pack(pady=12, padx=10)
+encryptButton = ctk.CTkButton(master=buttonFrame1, text="Encrypt message", command=EncryptButtonAction)
+decryptButton = ctk.CTkButton(master=buttonFrame1, text="Decrypt message", command=DecryptButtonAction)
+encryptButton.grid(row=0, column=0, pady=10, padx=10)
+decryptButton.grid(row=0, column=1, pady=10, padx=10)
 
-result_textBox = ctk.CTkTextbox(master=frame, width=400)
-result_textBox.pack(pady=20, padx=10)
+label1 = ctk.CTkLabel(master=frame, text="Results")
+label1.pack(pady=5)
+result_textBox = ctk.CTkTextbox(master=frame, width=400, wrap="word")
+result_textBox.pack(pady=(5, 20), padx=10)
 
 # ----------------- Run -----------------
 root.mainloop()
